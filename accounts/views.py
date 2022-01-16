@@ -3,4 +3,4 @@ from django.shortcuts import render
 
 # Create your views here.
 def login(request: HttpRequest):
-    return HttpResponse("안녕")
+    return render(request, "accounts/login.html", {})
