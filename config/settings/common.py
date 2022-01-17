@@ -83,8 +83,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'meme_dev', # DB명
-        'USER': 'fypi', # DB아이디
-        'PASSWORD': 'fy113412', # DB비밀번호
+        'USER': 'root', # DB아이디
+        'PASSWORD': '', # DB비밀번호
         'HOST': '127.0.0.1', # DB 호스트
         'PORT': '3306', # DB 포트
         'OPTIONS': {
