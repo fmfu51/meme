@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h1>{{ article.author }} 의 게시물</h1>
+<ul>
+    <img class="t-h-[100px]" src='{{ article.image.url }}' alt="">
+    <li>내용 : {{ article.content }}</li>
+    <li>업로드 날짜 : {{ article.reg_date }}</li>
+    <li>수정 날짜 : {{ article.update_date }}</li>
+    </div>
+</ul>
+{% endblock %}

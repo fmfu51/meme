@@ -1,27 +1,4 @@
-<!doctype html>
-{% load static %}
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>로그인</title>
-
-    <!-- jQuery -->
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-    <!-- tailwind -->
-    <link rel="stylesheet" href="{% static 'tailwind.output.css' %}">
-
-    <!-- bootstrap -->
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
-
-    <!-- common.css -->
-    <link rel="stylesheet" href="{% static 'common.css' %}">
-</head>
-<body>
- 안녕하세요
-</body>
-</html>
+{% extends 'layout.html' %}
+{% block content %}
+<h1>안녕</h1>
+{% endblock %}

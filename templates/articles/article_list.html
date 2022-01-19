@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div>
+    {% if article_list %}
+    <ul>
+        {% for article in article_list %}
+        <li>작성자 : {{ article.author }}</li>
+        <li>업로드 날짜 : {{ article.reg_date }}</li>
+        <li>수정 날짜 : {{ article.update_date }}</li>
+        <img class="t-h-[100px]" src='{{ article.image.url }}' alt="">
+        <li>내용 : {{ article.content }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    게시물이 없습니다.
+    {% endif %}
+</div>
+{% endblock %}
