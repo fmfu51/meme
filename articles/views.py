@@ -15,8 +15,18 @@ def index(request):
 
 
 def article_create(request):
-    form = ArticleForm()
-    return render(request, 'articles/article_form.html', {'form': form})
+    if request.method == 'POST':
+        form = ArticleForm(request.POST, request.FILES)
+        if form.is_valid():
+            article = form.save(commit=False)
+            article.author = request.user
+            article.reg_date = timezone.now()
+            article.save()
+            return redirect('article:index')
+    else:
+        form = ArticleForm()
+    context = {'form': form}
+    return render(request, 'articles/article_form.html', context)
 
 
 def article_detail(request, article_id):
