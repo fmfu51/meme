@@ -16,3 +16,10 @@ class Article(models.Model):
 
     class Meta:
         ordering = ['-reg_date']
+
+class Comment(models.Model):
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    content = models.TextField(blank=True)
+    reg_date = models.DateTimeField('등록날짜', auto_now_add=True)
+    update_date = models.DateTimeField('갱신날짜', auto_now=True)
+    article = models.ForeignKey(Article, null=True, blank=True, on_delete=models.CASCADE)
