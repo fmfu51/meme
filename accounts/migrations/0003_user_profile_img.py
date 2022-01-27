@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='user',
             name='profile_img',
-            field=models.ImageField(blank=True, help_text='gif/png/jpg 이미지를 업로드해주세요.', upload_to='accounts/profile_img/%Y/%m/%d', verbose_name='프로필이미지'),
+            field=models.ImageField(blank=True, help_text='gif/png/jpg 이미지를 업로드해주세요.', upload_to='accounts/avatar/%Y/%m/%d', verbose_name='프로필이미지'),
         ),
     ]

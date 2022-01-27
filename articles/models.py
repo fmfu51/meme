@@ -10,6 +10,7 @@ class Article(models.Model):
     image = models.ImageField(blank=True, upload_to='timeline_photo/%Y/%m/%d')
     reg_date = models.DateTimeField('등록날짜', auto_now_add=True)
     update_date = models.DateTimeField('갱신날짜', auto_now=True)
+    like = models.ManyToManyField(User)
 
     def __str__(self):
         return self.content

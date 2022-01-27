@@ -116,8 +116,18 @@ def comment_update(request, comment_id):
 def comment_delete(request, comment_id):
     comment = get_object_or_404(Comment, pk=comment_id)
     if request.user != comment.author:
-        messages.error(request, '댓글 삭제 권한이 없습니다')
+        messages.error(request, '댓글 삭제 권한이 없습니다.')
         return redirect('article:detail', article_id=comment.article.id)
     else:
         comment.delete()
     return redirect('article:detail', article_id=comment.article.id)
+
+
+@login_required(login_url='accounts:login')
+def like_article(request, article_id):
+    article = get_object_or_404(Article, pk=article_id)
+    if request.user == article.author:
+        messages.error(request, '본인이 작성한 글은 추천할 수 없습니다.')
+    else:
+        article.like.add(request.user)
+    return redirect('article:detail', article_id=article.id)

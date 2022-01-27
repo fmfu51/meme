@@ -17,14 +17,15 @@ from django.conf import settings
 from django.conf.urls import url
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.http import HttpResponse
 from django.urls import path, include
+from django_pydenticon.views import image as pydenticon_image
+
 
 urlpatterns = [
-    path('', lambda request: HttpResponse('<body>DDT확인</body>')),
     path('accounts/', include('accounts.urls')),
     path('admin/', admin.site.urls),
     path('index/', include('articles.urls')),
+    path('identicon/image/<path:data>/', pydenticon_image, name='pydenticon_image'),
 ]
 
 if settings.DEBUG:

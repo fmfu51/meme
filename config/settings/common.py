@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # 서드파티
+    'django_bootstrap5',
     'debug_toolbar',
+    'django_pydenticon',
     # Local App
     'accounts.apps.AccountsConfig',
     'articles.apps.ArticlesConfig',
@@ -144,3 +146,5 @@ INTERNAL_IPS = [
 ]
 
 AUTH_USER_MODEL = 'accounts.User'
+LOGIN_REDIRECT_URL = '/index/'
+LOGOUT_REDIRECT_URL = '/index/'

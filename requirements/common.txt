@@ -1,2 +1,6 @@
 Django
 mysqlclient
+pillow
+django_bootstrap5
+git+https://github.com/jhs512/django-pydenticon
+
