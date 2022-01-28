@@ -17,6 +17,13 @@
            class="btn btn-sm btn-outline-secondary">삭제</a>
     </div>
     {% endif %}
+    <div>
+        {% for tag in article.tag_set.all %}
+        <span class="badge badge-primary">
+                    #{{ tag.name }}
+                </span>
+        {% endfor %}
+    </div>
     <div class="row my-3">
         <div class="col-1"> <!-- 추천영역 -->
             <div class="bg-light text-center p-3 border font-weight-bolder mb-1">{{ article.like.count }}</div>
@@ -70,5 +77,6 @@ $(document).ready(function(){
         }
     });
 });
+
 </script>
 {% endblock %}

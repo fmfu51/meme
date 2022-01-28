@@ -13,13 +13,13 @@ from articles.models import Article, Comment
 
 def index(request):
     # 페이징 입력 파라미터
-    page = request.GET.get('page', '1')
+    page = request.GET.get('page', '30')
 
     # 조회
     article_list = Article.objects.order_by('-reg_date')
 
     # 페이징 처리
-    paginator = Paginator(article_list, 1)
+    paginator = Paginator(article_list, 30)
     page_obj = paginator.get_page(page)
 
     context = {'article_list': page_obj}
