@@ -8,8 +8,13 @@
         {% for article in article_list %}
         <li class="t-flex t-flex-col t-group">
             <a class="t-relative t-overflow-hidden" href="{% url 'article:detail' article.id %}">
+                {% if article.image %}
                 <img class="t-block t-w-full t-transition-all group-hover:t-scale-105 t-object-cover"
-                     src='{{ article.image.url }}' alt="" style="aspect-ratio: 1 / 1;"></a>
+                     src='{{ article.image.url }}' alt="" style="aspect-ratio: 1 / 1;">
+                {% else %}
+                이미지없음
+                {% endif %}
+            </a>
         </li>
         {% endfor %}
     </ul>

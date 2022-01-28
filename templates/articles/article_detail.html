@@ -3,7 +3,7 @@
 
 
 <div class="container t-m-3">
-    <ul class="t-grid t-gap-[20px] t-mt-2 t-p-0">
+    <ul class="t-grid t-gap-[20px] t-mt-2 t-p-0 text-white">
         <li class="t-flex"><img src="{{ user.avatar.url }}" class="t-w-full t-transition-all t-object-cover"
                                 style="width: 30px; height: 30px; float:left; "/>
             <span style="font-size:20px; font-weight: 600">&nbsp;&nbsp;{{ article.author }}</span>
@@ -12,14 +12,18 @@
             <a class="btn btn-light btn-sm" style="font-size:10px;"
                href="{% url 'article:update' article.id %}">수정
             </a>
-            &nbsp;
-            <div class="delete btn btn-light btn-sm" style="font-size:10px;"
+            &nbsp;&nbsp;
+            <a class="delete btn btn-light btn-sm" style="font-size:10px;"
                  href="{% url 'article:delete' article.id %}">삭제
-            </div>
+            </a>
             {% endif %}
         </li>
         <li class="t-flex t-flex-col t-group t-relative t-overflow-hidden">
+            {% if article.image %}
             <img class="t-block t-w-full t-transition-all t-object-cover" src='{{ article.image.url }}' alt="">
+            {% else %}
+            이미지 없음
+            {% endif %}
         </li>
         <li>
             <div style="font-size:16px; font-weight: 600;">{{ article.author }}</div>
@@ -27,7 +31,7 @@
         </li>
         <li class="recommend col-1"> <!-- 추천영역 -->
             <a href="{% url 'article:like_article' article.id  %}"
-               class="recommend btn btn-sm btn-secondary btn-block my-1">{{ article.like.count }}　♥</a>
+               class="btn btn-sm btn-secondary btn-block my-1">{{ article.like.count }}　♥</a>
         </li>
         <li>
             <div><!-- 태그 -->

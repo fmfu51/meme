@@ -23,7 +23,7 @@ def logout(request: HttpRequest):
 @logout_required
 def join(request: HttpRequest):
     if request.method == 'POST':
-        form = JoinForm(request.POST)
+        form = JoinForm(request.POST, request.FILES)
         if form.is_valid():
             signed_user = form.save()
             auth_login(request, signed_user)
@@ -51,4 +51,3 @@ def profile_edit(request):
     return render(request, "accounts/profile_edit_form.html", {
         "form": form,
     })
-

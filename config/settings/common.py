@@ -149,3 +149,4 @@ INTERNAL_IPS = [
 AUTH_USER_MODEL = 'accounts.User'
 LOGIN_REDIRECT_URL = '/index/'
 LOGOUT_REDIRECT_URL = '/index/'
+JOIN_REDIRECT_URL = '/index/'

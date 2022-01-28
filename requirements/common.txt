@@ -3,4 +3,4 @@ mysqlclient
 pillow
 django_bootstrap5
 git+https://github.com/jhs512/django-pydenticon
-
+django_debug_toolbar
