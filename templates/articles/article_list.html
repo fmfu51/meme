@@ -2,9 +2,9 @@
 {% block content %}
 
 
-<div>
+<div class="t-m-5">
     {% if article_list %}
-    <ul class="t-grid t-grid-cols-1 sm:t-grid-cols-2 md:t-grid-cols-3 lg:sm:t-grid-cols-4 t-gap-[20px] t-mt-3">
+    <ul class="t-grid t-grid-cols-1 sm:t-grid-cols-2 md:t-grid-cols-3 lg:sm:t-grid-cols-4 t-gap-[20px] t-mt-3 t-p-0">
         {% for article in article_list %}
         <li class="t-flex t-flex-col t-group">
             <a class="t-relative t-overflow-hidden" href="{% url 'article:detail' article.id %}">
@@ -22,8 +22,8 @@
 <!-- 페이징처리 시작 -->
 <div>
     <ul class=" pagination pagination-sm justify-content-center">
-                <!-- 이전페이지 -->
-                {% if article_list.has_previous %}
+        <!-- 이전페이지 -->
+        {% if article_list.has_previous %}
         <li class="page-item">
             <a class="page-link" href="?page={{ article_list.previous_page_number }}">&laquo;</a>
         </li>
